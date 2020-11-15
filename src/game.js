@@ -1,3 +1,5 @@
+import { flipCard } from './flip.js'
+
 let cards = []
 let used_images = []
 
@@ -39,6 +41,15 @@ const createCard = (id, pair, image) => {
 const createSet = () => {
   cards = cards.sort(sortfunc)
   cards.forEach(card => {
-    document.getElementById('cards').appendChild(card)
+    let div = document.createElement('div')
+    div.classList.add('card')
+    div.onclick = flipCard
+
+    let div2 = document.createElement('div')
+    div2.classList.add('black')
+
+    div.appendChild(div2)
+    div.appendChild(card)
+    document.getElementById('cards').appendChild(div)
   })
 }
