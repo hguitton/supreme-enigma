@@ -1,9 +1,12 @@
 import { flipCard } from './flip.js'
+import { updateScore } from './utils.js'
 
+export let nbPairs = 5
 let cards = []
 let used_images = []
 
-export const initializeGame = (nbPairs) => {
+// Initialize the game : create the sets of cards
+export const startGame = () => {
   let y = 0
   for(let i = 0; i < nbPairs; i++) {
     let image = pickImage()
@@ -11,6 +14,7 @@ export const initializeGame = (nbPairs) => {
     createCard(y++, i, image)  
   }
   createSet()
+  updateScore(0, nbPairs)
 }
 
 // Suffle the cards
@@ -37,7 +41,7 @@ const createCard = (id, pair, image) => {
   cards.push(card)
 }
 
-// Add the set of cards to the dom
+// Add the set of cards to the DOM
 const createSet = () => {
   cards = cards.sort(sortfunc)
   cards.forEach(card => {

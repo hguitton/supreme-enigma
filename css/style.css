@@ -1,39 +1,42 @@
 .main {
+  height: 100vh;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
+
 .grid {
+  height: auto;
   display: grid;
-  grid-gap: 50px;
+  grid-gap: 20px;
   overflow: auto;
-}
-
-.grid-1 {
-  grid-template-columns: 1fr;
-}
-
-.grid-2 {
-  grid-template-columns: 1fr 1fr;
-}
-
-.grid-3 {
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-.grid-4 {
-  grid-template-columns: 1fr 1fr;
+  min-height: 250px;
 }
 
 .grid-5 {
   grid-template-columns: repeat(5, 1fr);
 }
 
-.square {
+.card {
   height: 100px;
   width: 100px;
+  position: relative;
+  overflow: hidden;
 }
 
-.blue {
-  background-color: blue;
+.black {
+  background-color: black;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  
+  -webkit-transition: background-color 300ms linear;
+  -ms-transition: background-color 300ms linear;
+  transition: background-color 300ms linear;
+}
+
+.flipped {
+  background-color: transparent;
 }

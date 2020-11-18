@@ -1,5 +1,3 @@
-import { initializeGame } from './game.js'
+import { startGame } from './game.js'
 
-initializeGame(5)
-
-// flipCards
+startGame()
